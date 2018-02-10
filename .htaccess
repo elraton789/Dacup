@@ -1,0 +1,15 @@
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|json|lock|swp)|~)$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+IndexIgnore *
+AddType application/x-httpd-php .foo
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
